@@ -52,6 +52,7 @@ class IsolationForest:
         # Stopping conditions
         if current_depth >= self.max_depth or len(indexes) <= 1:
             node["is_leaf"] = True
+            node["item_value"] = self.input_columns[0][indexes[0]]
             return node
 
         # Random split
