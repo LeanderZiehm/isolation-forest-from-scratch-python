@@ -1,0 +1,61 @@
+######### TODO ADD TYPING TO MY CODE!!!!!
+
+
+
+########### plot 2d
+x1 = [0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 100]
+x2 = [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 100]
+
+table = np.column_stack([x1,x2]).tolist()
+
+
+# Fit the model
+iforest = MyIsolationForest(num_trees=100, subsample_size=256, random_seed=0)
+iforest.fit(table)               # note: expects a list of feature lists
+scores = iforest.score_samples()
+
+import matplotlib.pyplot as plt
+
+#########################
+
+
+
+
+
+
+Max depth = ceiling of log2 subsample size
+
+forest is a list of trees. n = 100. test this n value for my custom datset.
+
+# build forest
+
+
+
+
+node = 
+
+why do we need inedexes?
+
+
+
+
+# custom datset
+have two gausion distributions with same values just sifted mean
+then play around with the other variable sqish and sqash and other distrobutins.
+stay in 2d and 1d
+
+
+# Questions
+how many collumns can isolation forest handle?
+is n = 100 really the best in all situations?
+is sample =256 really the best in all situations?
+why do we use a aproximation value in this algorithom?(speed vs acurracy?)
+how many collumns can it handle before perfomrance f1 halfs? (plot it) 
+is roc, auc, f1 the best? (for which situations woud wich be better?)
+
+
+# general Questions
+what datatype are the input_columns is it a dataframe. should I rename it?
+it is a list of lists. should I at least use numpy arrays?
+does a pandas dataframe convert easily to numpy array and list of lists?
+is there a big speed difference between using list of list and numpy arrays?

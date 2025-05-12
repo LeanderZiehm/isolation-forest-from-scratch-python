@@ -183,3 +183,17 @@ class IsolationForest:
         """
         scores = self.score_samples(row_indices)
         return [1 if score > threshold else 0 for score in scores]
+
+
+if __name__ == "__main__":
+    # Example usage (if this file is run directly)
+    x1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
+    y = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+    input_columns = [x1]  # only features
+    solution_column = y  # labels (not used in training)
+
+    # Create and fit the model
+    iforest = IsolationForest(num_trees=100, subsample_size=256, random_seed=0)
+    iforest.fit(input_columns)
+    scores = iforest.score_samples()
+    print(scores)
